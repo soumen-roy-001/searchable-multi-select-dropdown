@@ -1,0 +1,33 @@
+$black-color: #000000;
+$primary-color: #7360df;
+$font-size: 16px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  place-content: center;
+}
+
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar Track */
+::-webkit-scrollbar-track {
+  background: rgba($black-color, 0.1);
+}
+
+/* scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($black-color, 0.3);
+  border-radius: 12px;
+}
+
+/* scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($black-color, 0.6);
+}

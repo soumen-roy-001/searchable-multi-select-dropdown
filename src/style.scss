@@ -1,0 +1,99 @@
+@use "partials/base";
+
+%input-base {
+  padding: 12px 15px;
+  border-radius: 12px;
+  line-height: 25px;
+  font-size: base.$font-size;
+  border: 2px solid rgba(base.$black-color, 0.23);
+  outline: 0;
+  color: rgba(base.$black-color, 0.6);
+}
+
+.dropdown-container {
+  position: relative;
+  margin-top: 100px;
+  min-width: 250px;
+}
+.dropdown-input {
+  position: relative;
+  border-radius: 12px;
+  input {
+    @extend %input-base;
+    padding: 12px 30px 12px 15px;
+    transition: box-shadow 0.35s ease-in-out;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      border-color: rgba(base.$black-color, 0.87);
+    }
+    &:focus,
+    :focus-visible {
+      border: 2px solid base.$primary-color;
+      box-shadow: 0px 0px 0px 3px rgb(base.$primary-color, 0.6);
+    }
+  }
+}
+.arrow {
+  border: solid base.$black-color;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  cursor: pointer;
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.list-content {
+  position: absolute;
+  z-index: 100;
+  border: 1px solid rgba(base.$black-color, 0.23);
+  border-radius: 8px;
+  background-color: white;
+  width: 100%;
+  margin-top: 4px;
+  box-shadow: 0px 0px 2px 0px rgba(base.$black-color, 0.23);
+  padding: 8px;
+  max-height: 250px;
+  overflow: hidden;
+  scrollbar-gutter: stable both-edges;
+  &:hover {
+    overflow-y: auto;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      color: rgba(base.$black-color, 0.6);
+      justify-content: space-between;
+      border-radius: 8px;
+      margin-bottom: 4px;
+      &.item-selected {
+        background-color: rgba(base.$primary-color, 0.1);
+        color: rgba(base.$primary-color, 0.6);
+      }
+      &:hover {
+        background-color: rgb(base.$primary-color, 0.2);
+        color: rgba(base.$black-color, 0.6);
+      }
+    }
+  }
+}
+
+.item-title {
+  font-size: 1.1rem;
+}
