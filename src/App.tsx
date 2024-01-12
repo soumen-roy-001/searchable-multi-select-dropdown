@@ -11,7 +11,6 @@ type Item = {
 };
 
 function App() {
-  const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,7 +18,10 @@ function App() {
   const [filteredList, setFilteredList] = useState<Item[]>([]);
   const [input, setInput] = useState<string>("");
 
-  useClickOutsider(listRef, setIsOpen);
+  const listRef = useClickOutsider(() => {
+    setIsOpen(false);
+  });
+
   const debouncedKeyword = useDebounce(input);
 
   const memoizedList = useMemo(() => {

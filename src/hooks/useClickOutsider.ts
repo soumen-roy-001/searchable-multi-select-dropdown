@@ -1,19 +1,21 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, useRef } from "react";
 
-const useClickOutsider = (
-  ref: RefObject<HTMLDivElement>,
-  handler: (value: boolean) => void
-) => {
+const useClickOutsider = (callback: () => void) => {
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const isClickedOutside = (e: Event) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        handler(false);
+        callback && callback();
+        return;
       }
     };
     document.addEventListener("click", isClickedOutside);
     return () => {
       document.removeEventListener("click", isClickedOutside);
     };
-  }, [ref, handler]);
+  }, []);
+
+  return ref;
 };
 export default useClickOutsider;
