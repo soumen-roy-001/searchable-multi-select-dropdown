@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# React + Functional component + TypeScript + Vite + Sass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- A multi drop-down select list with the ability to add new items by type it on the input and pressing the enter keyword.
+- It covers case-insensitive search using by a debounce hook
+- It is closeable by clicking the outside of it using by a custom hook
 
-Currently, two official plugins are available:
+<img width="299" alt="screenshot" src="https://github.com/soumen-roy-001/searchable-multi-select-dropdown/assets/53516520/5464ed1e-4a8d-4fef-9c5b-c8c5a282fbe7">  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+<img width="258" alt="screenshot-search" src="https://github.com/soumen-roy-001/searchable-multi-select-dropdown/assets/53516520/72f656ec-3185-4f39-bbc2-6b5ae1024013">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
